@@ -1,0 +1,23 @@
+{% extends 'mainpage/base.html' %}
+{% load static %}
+{% block title %}about us{%endblock%}
+
+{% block content%}
+
+этот файл расшыряет mainpage/base.html<br>
+хедер и футер описывай там так как это будет повторятся на каждой страниц<br>
+а в блоке контент - уникальный для каждой страницы контент
+
+<p class="asd">images = {{ images }}</p>
+<p>text = {{ text }}</p>
+
+{% for image in images %}
+    <p>image_name = {{ image.name }} </p>
+    <img src="{{ image.picture.url }}">
+{% endfor %}
+
+{% for t in text %}
+    <p> text_title = {{ t.title }} , full_text = {{ t.text }}</p>
+{% endfor %}
+
+{% endblock %}
